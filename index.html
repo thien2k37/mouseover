@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+<img src="bong.png" id="my_img" width="200" height="200"> <br>
+
+<input type="button" onclick="to_right();" value="Click to Right">
+<script>
+    let save_img = null;
+    save_img = document.getElementById('my_img');
+    function init() {
+        save_img = document.getElementById("my_img");
+        save_img.style.position = "relative";
+        save_img.style.left = "0px";
+    }
+    function to_right() {
+        save_img.style.left = parseInt(save_img.style.left) + 10 + "px";
+    }
+    window.onload = init;
+</script>
+</body>
+</html>
