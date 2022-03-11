@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" cellpadding="0" cellspacing="0">
+    <tr>
+        <th>BMI</th>
+        <th>Interpretation</th>
+    </tr>
+    <tr>
+        <td>BMI < 18.5</td>
+        <td>Underweight</td>
+    </tr>
+    <tr>
+        <td>18.5 <= BMI < 25</td>
+        <td>Normal</td>
+    </tr>
+    <tr>
+        <td>25.0 <= 30.0</td>
+        <td>Overweight</td>
+    </tr>
+    <tr>
+        <td>30.0 <= BMI</td>
+        <td>Obese</td>
+    </tr>
+    <tr>
+        <th><input type="text" id="so1" placeholder="Chiều Cao"> </th>
+        <th><h3 type="text" id="kq" placeholder=""></h3></th>
+    </tr>
+    <tr>
+        <th><input type="text" id="so2" placeholder="Cân Nặng"> </th>
+        <th><button onclick="tinh_qk()">Xem kết quả</button></th>
+    </tr>
+
+</table>
+<script>
+    function tinh_qk() {
+        let one =  document.getElementById("so1");
+        let two =  document.getElementById("so2");
+        let cao = one.value;
+        let nang = two.value;
+        let xem = nang / (cao**2);
+        if (xem < 18.5) {
+            document.getElementById("kq").innerHTML = "Underweight";
+        }else if (xem >= 18.5 && xem <25.0) {
+            document.getElementById("kq").innerHTML = "Normal";
+        }else if (xem >= 25.0 && xem < 30.0) {
+            document.getElementById("kq").innerHTML = "Overweight";
+        }else {
+            document.getElementById("kq").innerHTML = "Obese";
+        }
+    }
+</script>
+</body>
+</html>
