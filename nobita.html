@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="nobita.png" id="my_img" style="position:absolute;left:0px; top:100px;" width="200" height="200">
+<button onclick="on_right()">sang phai</button>
+<button onclick="on_left()">sang trái</button>
+<button onclick="on_top()">lên</button>
+<button onclick="on_boss()">xuống</button>
+
+
+<script>
+let img = document.getElementById("my_img");
+
+function on_right(){
+    img.style.left = parseInt(img.style.left) + 10 + "px";
+}
+function on_left(){
+    img.style.left = parseInt(img.style.left) - 10 + "px";
+}
+function on_top(){
+    img.style.top = parseInt(img.style.top) + 10 + "px";
+}
+function on_boss(){
+    img.style.top = parseInt(img.style.top) - 10 + "px";
+}
+
+</script>
+</body>
+</html>
