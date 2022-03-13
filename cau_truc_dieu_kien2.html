@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="2">Phương Trình Bậc 2</th>
+    </tr>
+
+    <tr>
+        <td>Nhập A:</td>
+        <td><input id="a" type="number"></td>
+    </tr>
+    <tr>
+        <td>Nhập B:</td>
+        <td><input id="b" type="number" ></td>
+    </tr>
+    <tr>
+        <td>Nhập C:</td>
+        <td><input id="c" type="number" ></td>
+    </tr>
+    <tr>
+        <td><button onclick="tinh_PT()">Phương trình:</button></td>
+        <td><textarea id="kq_PT"></textarea></td>
+    </tr>
+    <script>
+        function tinh_PT() {
+            let input_a = document.getElementById("a");
+            let input_b = document.getElementById("b");
+            let input_c = document.getElementById("c");
+            let a = input_a.value;
+            let b = input_b.value;
+            let c = input_c.value;
+            let kq = b**2 -4*a*c;
+            if (kq < 0) {
+                document.getElementById("kq_PT").innerHTML = " Vô Nghiệm";
+            }else if (kq == 0 ) {
+                document.getElementById("kq_PT").innerHTML = (-b / 2*a) + " Nghiệm Kép";
+            }else  {
+                document.getElementById("kq_PT").innerHTML = "X1 =" + (-b + Math.sqrt(kq)) / 2*a  + " , " + "X2 = " + (-b - Math.sqrt(kq)) / 2*a;
+            }
+        }
+    </script>
+</table>
+</body>
+</html>
