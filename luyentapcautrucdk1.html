@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không-->
+<table>
+    <tr>
+        <th colspan="2">Nhập 2 số </th>
+    </tr>
+
+    <tr>
+        <td>Nhập A:</td>
+        <td><input id="A" type="number"></td>
+    </tr>
+    <tr>
+        <td>Nhập B:</td>
+        <td><input id="B" type="number" ></td>
+    </tr>
+    <tr>
+        <td><button onclick="bam()">A%B ?</button></td>
+        <td><textarea id="kq"></textarea></td>
+    </tr>
+
+</table>
+<script>
+    function bam() {
+        let a = document.getElementById("A");
+        let b = document.getElementById("B");
+        if (a.value % b.value == 0) {
+            document.getElementById("kq").value = "có";
+        }else {
+            document.getElementById("kq").value = "không";
+        }
+    }
+</script>
+<!--Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.-->
+<table>
+    <tr>
+        <th colspan="2">Kiểm Tra tuổi HỌC SINH</th>
+    </tr>
+
+    <tr>
+        <td>Nhập tuổi:</td>
+        <td><input id="age" type="number"></td>
+    </tr>
+
+    <tr>
+        <td><button onclick="bam_tuoi()">Mày Đủ tuổi chưa?</button></td>
+        <td><textarea id="kq_tuoi"></textarea></td>
+    </tr>
+<script>
+    function bam_tuoi() {
+        let AGE = document.getElementById("age");
+        let tuoi = AGE.value;
+        if (tuoi >= 15) {
+            document.getElementById("kq_tuoi").innerHTML = tuoi + " à đủ rồi!!!";
+        }else {
+            document.getElementById("kq_tuoi").innerHTML = tuoi + " chưa! về học lại";
+        }
+    }
+</script>
+</table>
+
+<!--Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0-->
+<table>
+    <tr>
+        <th colspan="2">Kiểm Tra >0<</th>
+    </tr>
+
+    <tr>
+        <td>Nhập Số</td>
+        <td><input id="number" type="number"></td>
+    </tr>
+
+    <tr>
+        <td><button onclick="bam_so()">Mày Đủ tuổi chưa?</button></td>
+        <td><textarea id="kq_so"></textarea></td>
+    </tr>
+    <script>
+        function bam_so() {
+            let so = document.getElementById("number");
+            let SO = so.value;
+            if (SO > 0) {
+                document.getElementById("kq_so").innerHTML = "Số " + SO + " > 0";
+            }if (SO < 0) {
+                document.getElementById("kq_so").innerHTML = "Số " + SO + " < 0";
+            }
+        }
+    </script>
+</table>
+
+<!--Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó-->
+<table>
+    <tr>
+        <th colspan="2">Nhập 3 số nguyên</th>
+    </tr>
+
+    <tr>
+        <td>Nhập số thứ nhất:</td>
+        <td><input id="nhat" type="number"></td>
+    </tr>
+    <tr>
+        <td>Nhập số thứ hai:</td>
+        <td><input id="hai" type="number" ></td>
+    </tr>
+    <tr>
+        <td>Nhập số thứ ba:</td>
+        <td><input id="ba" type="number" ></td>
+    </tr>
+    <tr>
+        <td><button onclick="bam_max()">Số lớn nhất là:</button></td>
+        <td><textarea id="kq_max"></textarea></td>
+    </tr>
+<script>
+    function bam_max() {
+        let nhat = document.getElementById("nhat");
+        let hai = document.getElementById("hai");
+        let ba = document.getElementById("ba");
+        let a = nhat.value;
+        let b = hai.value;
+        let c = ba.value;
+        let max = a;
+        if (max < b) {
+            max = b;
+        }if (max < c) {
+            max = c;
+        }
+        document.getElementById("kq_max").innerHTML = max;
+    }
+<!--Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ-->
+
+</script>
+</table>
+
+<table>
+    <tr>
+        <th colspan="2">Xếp Hạng Học Lực</th>
+    </tr>
+
+    <tr>
+        <td>Điểm Bài Kiểm Tra:</td>
+        <td><input id="dkt" type="number"></td>
+    </tr>
+    <tr>
+        <td>Điểm Thi Giữa Kỳ:</td>
+        <td><input id="dgk" type="number" ></td>
+    </tr>
+    <tr>
+        <td>Điểm Thi Cuối Kỳ:</td>
+        <td><input id="dck" type="number" ></td>
+    </tr>
+    <tr>
+        <td><button onclick="bam_tinh()">Tính Học Lực:</button></td>
+        <td><textarea id="kq_diem"></textarea></td>
+    </tr>
+    <script>
+        function bam_tinh() {
+            let dkt = document.getElementById("dkt");
+            let dgt = document.getElementById("dgk");
+            let dck = document.getElementById("dck");
+            let kt = +dkt.value;
+            let gt = +dgt.value;
+            let ck = +dck.value;
+            let kq_cluck = (kt + gt + ck) / 3;
+            if (kq_cluck >= 8) {
+                document.getElementById("kq_diem").innerHTML = kq_cluck + " HS Giỏi";
+            }else if (kq_cluck < 8 && kq_cluck >= 6.5) {
+                document.getElementById("kq_diem").innerHTML = kq_cluck + " HS Khá";
+            }else if (kq_cluck < 6.5 && kq_cluck >= 5) {
+                document.getElementById("kq_diem").innerHTML = kq_cluck + " HS Trung Bình ";
+            }else {
+                document.getElementById("kq_diem").innerHTML = kq_cluck + " HS Yếu";
+            }
+
+        }
+
+    </script>
+</table>
+<!--Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng-->
+
+<table>
+    <tr>
+        <th colspan="2">Hoa Hồng</th>
+    </tr>
+
+    <tr>
+        <td>Nhập Doanh Thu:</td>
+        <td><input id="input_DS" type="number"></td>
+    </tr>
+
+    <tr>
+        <td><button onclick="tinh_hh()">Tính Hóa Hồng</button></td>
+        <td><textarea id="kq_HH"></textarea></td>
+    </tr>
+    <script>
+        function tinh_hh() {
+            let doanh_so = document.getElementById("input_DS");
+            let DS = doanh_so.value;
+            if (DS <= 100) {
+                document.getElementById("kq_HH").innerHTML = "Hoa hồng = " + DS /100 * 5 + " triệu" ;
+            }else if (DS > 100 && DS <= 300) {
+                document.getElementById("kq_HH").innerHTML = "Hoa hồng = " + DS /100 * 10 + " triệu";
+            }else {
+                document.getElementById("kq_HH").innerHTML = "Hoa Hồng = " + DS / 100 * 20 + " triệu"
+            }
+        }
+    </script>
+</table>
+</body>
+</html>
